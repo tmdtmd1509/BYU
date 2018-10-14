@@ -1,0 +1,49 @@
+
+
+create table User
+(
+	Username text not null primary key,
+	Password text not null,
+	Email text not null,
+	First_Name text not null,
+	Last_Name text not null,
+	Gender ck_gender check (gender in ('f', 'm')),
+	Person_ID text no null
+);
+
+
+create table Person
+(
+	Person_ID text no null primary key,
+	Descendant text not null,
+	First_Name text not null,
+	Last_Name text not null,
+	Gender ck_gender check (gender in ('f', 'm')),
+	Father text,
+	Mother text,
+	Spouse text
+);
+
+
+create table Event
+(
+	Event_ID text no null primary key,
+	Descendant text not null,
+	Person text not null,
+	Latitude text,
+	Longitude text,
+	Country text,
+	City text,
+	EventType text not null,
+	Year integer
+);
+
+
+create table AuthToken
+(
+	Username text not null,
+	Auth_token text not null primary key
+);
+
+
+
