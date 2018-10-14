@@ -1,0 +1,1 @@
+include ':app', ':Server', ':FamilyMap_Server', ':test', ':gson-2.8.2-javadoc'
